@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "error": "TEST_ERROR=true node ./src/index.js",
+    "migrate": "psql scheduler < ./src/db/schema/create.sql && psql scheduler < ./src/db/schema/development.sql",
+    "test:migrate": "psql -o /dev/null scheduler_test < ./src/db/schema/create.sql && psql -o /dev/null scheduler_test < ./src/db/schema/test.sql",
+    "test": "npm run test:migrate && jest --watch --runInBand"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "helmet": "^3.18.0",
+    "pg": "^7.8.1",
+    "socket.io": "^2.2.0",
+    "ws": "^7.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^7.0.0",
+    "jest": "^24.8.0",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ]
+  }
+}
