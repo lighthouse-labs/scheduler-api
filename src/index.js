@@ -31,6 +31,6 @@ function updateAppointment(id, interview) {
   });
 }
 
-server.listen(3001, () => {
+server.listen(PORT, () => {
   console.log(`Listening on port ${PORT} in ${ENV} mode.`);
 });
