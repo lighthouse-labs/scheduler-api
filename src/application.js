@@ -4,6 +4,7 @@ const path = require("path");
 const express = require("express");
 const bodyparser = require("body-parser");
 const helmet = require("helmet");
+const cors = require("cors");
 
 const app = express();
 
@@ -32,6 +33,7 @@ module.exports = function application(
   ENV,
   actions = { updateAppointment: () => {} }
 ) {
+  app.use(cors());
   app.use(helmet());
   app.use(bodyparser.json());
 

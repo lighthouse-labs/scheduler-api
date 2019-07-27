@@ -2,14 +2,10 @@ const PORT = process.env.PORT || 3001;
 const ENV = require("./environment");
 
 const app = require("./application")(ENV, { updateAppointment });
-const cors = require("cors");
 const server = require("http").Server(app);
 
 const WebSocket = require("ws");
 const wss = new WebSocket.Server({ server });
-
-
-app.use(cors());
 
 wss.on("connection", socket => {
   socket.onmessage = event => {
