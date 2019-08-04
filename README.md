@@ -16,7 +16,7 @@ PGPORT=
 
 Two ways to seed the database.
 
-- Can run `npm run migrate` from within this project.
+- Can run `npm run test` from within this project.
 - Run a development server and issue a command `curl -X POST http://localhost:3001/api/debug/reset`.
 
 ## Api
