@@ -1,16 +1,16 @@
 ## Creating The DB
 
-Create a database with the command `CREATE DATABASE scheduler_development;`.
-
-Copy the `.env.example` file to .env.development and fill in the necessary PostgreSQL configuration. The `node-postgres` library uses these environment variables by default.
+Copy the `.env.example` file to .env.development and fill in the necessary PostgreSQL configuration. The example below uses the same configuration as your midterm project. The `node-postgres` library uses these environment variables by default.
 
 ```
-PGHOST=
-PGUSER=
-PGDATABASE=
-PGPASSWORD=
-PGPORT=
+PGHOST=localhost
+PGUSER=labber
+PGDATABASE=scheduler_development
+PGPASSWORD=labber
+PGPORT=5432
 ```
+
+Create a database with the command `CREATE DATABASE scheduler_development OWNER labber;`.
 
 ## Seeding
 
