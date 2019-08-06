@@ -1,5 +1,7 @@
 ## Creating The DB
 
+Use the `psql -U development` command to login to the PostgreSQL server with the username `development` and the password `development`.
+
 Create a database with the command `CREATE DATABASE scheduler_development;`.
 
 Copy the `.env.example` file to .env.development and fill in the necessary PostgreSQL configuration. The `node-postgres` library uses these environment variables by default.
@@ -16,7 +18,7 @@ PGPORT=
 
 Two ways to seed the database.
 
-- Can run `npm run test` from within this project.
+- Can run `npm run reset` from within this project.
 - Run a development server and issue a command `curl -X POST http://localhost:3001/api/debug/reset`.
 
 ## Api
