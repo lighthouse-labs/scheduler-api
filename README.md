@@ -1,6 +1,6 @@
 ## Creating The DB
 
-Copy the `.env.example` file to .env.development and fill in the necessary PostgreSQL configuration. The example below uses the same configuration as your midterm project. The `node-postgres` library uses these environment variables by default.
+Rename the `.env.example` file to `.env.development` and fill in the necessary PostgreSQL configuration. The example below uses the same configuration as your midterm project. The `node-postgres` library uses these environment variables by default.
 
 ```
 PGHOST=localhost
