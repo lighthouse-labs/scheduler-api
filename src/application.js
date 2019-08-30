@@ -47,11 +47,12 @@ module.exports = function application(
       read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
     ])
       .then(([create, seed]) => {
-        app.post("/api/debug/reset", (request, response) => {
+        app.get("/api/debug/reset", (request, response) => {
           db.query(create)
             .then(() => db.query(seed))
             .then(() => {
-              response.status(204).send();
+              console.log("Database Reset");
+              response.status(200).send("Database Reset");
             });
         });
       })

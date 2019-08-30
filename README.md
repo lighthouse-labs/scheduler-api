@@ -1,25 +1,29 @@
 ## Creating The DB
 
-Use the `psql -U development` command to login to the PostgreSQL server with the username `development` and the password `development`.
+Use the `psql -U development` command to login to the PostgreSQL server with the username `development` and the password `development`. This command **MUST** be run in a vagrant terminal, we are using the PostgreSQL installation provided in the vagrant environment.
 
 Create a database with the command `CREATE DATABASE scheduler_development;`.
 
-Copy the `.env.example` file to .env.development and fill in the necessary PostgreSQL configuration. The `node-postgres` library uses these environment variables by default.
+Copy the `.env.example` file to `.env.development` and fill in the necessary PostgreSQL configuration. The `node-postgres` library uses these environment variables by default.
 
 ```
-PGHOST=
-PGUSER=
-PGDATABASE=
-PGPASSWORD=
-PGPORT=
+PGHOST=localhost
+PGUSER=development
+PGDATABASE=scheduler_development
+PGPASSWORD=development
+PGPORT=5432
 ```
 
 ## Seeding
 
-Two ways to seed the database.
+Run a the development server with `npm start` in the Host environment. We are only using vagrant for `psql` this week.
 
-- Can run `npm run reset` from within this project.
-- Run a development server and issue a command `curl -X POST http://localhost:3001/api/debug/reset`.
+Both of these achieve the same result.
+
+- Make a `GET` request to `/api/debug/reset` with `curl http://localhost:8001/api/debug/reset`.
+- Use the browser to navigate to `http://localhost:8001/api/debug/reset`.
+
+The `development` data is random. Each time we seed we expect to see different appointments.
 
 ## Api
 
