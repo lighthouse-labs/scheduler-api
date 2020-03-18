@@ -4,12 +4,6 @@
 
 Install dependencies with `npm install`.
 
-## Run The Server
-
-```sh
-npm start
-```
-
 ## Creating The DB
 
 Use the `psql -U development` command to login to the PostgreSQL server with the username `development` and the password `development`. This command **MUST** be run in a vagrant terminal, we are using the PostgreSQL installation provided in the vagrant environment.
@@ -36,6 +30,12 @@ Both of these achieve the same result.
 - Use the browser to navigate to `http://localhost:8001/api/debug/reset`.
 
 The `development` data is random. Each time we seed we expect to see different appointments.
+
+## Run The Server
+
+```sh
+npm start
+```
 
 ## Api
 
