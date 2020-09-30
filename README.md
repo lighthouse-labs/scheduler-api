@@ -22,7 +22,7 @@ PGPORT=5432
 
 ## Seeding
 
-Run a the development server with `npm start` in the Vagrant environment.
+Run the development server with `npm start` in the Vagrant environment.
 
 Both of these achieve the same result.
 
