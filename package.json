@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node ./src/index.js",
     "error": "TEST_ERROR=true node ./src/index.js",
+    "test:server": "NODE_ENV=test npm start",
     "reset": "psql -U development -d scheduler_development < ./src/db/schema/create.sql && psql -U development -d scheduler_development < ./src/db/schema/development.sql"
   },
   "author": "",
