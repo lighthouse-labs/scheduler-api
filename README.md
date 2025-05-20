@@ -6,7 +6,7 @@ Install dependencies with `npm install`.
 
 ## Creating The DB
 
-1. Make sure you have a `development` use for PostgreSQL
+1. Make sure you have a `development` user for PostgreSQL
 2. Use the `psql -U development` command to login to the PostgreSQL server with the username `development` and the password `development`. 
 3. Create a database with the command `CREATE DATABASE scheduler_development;`.
 4. Copy the `.env.example` file to `.env.development` and fill in the necessary PostgreSQL configuration. The `node-postgres` library uses these environment variables by default.
